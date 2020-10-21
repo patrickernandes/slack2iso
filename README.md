@@ -12,14 +12,14 @@ chmod +x slack2iso.sh
 
 ### Options:
 
-- **-help**: Display help.
-- **-clean**: Clean the work folder.
-- **-create**: Create the iso image.
+- **--help**: Display help.
+- **--clean**: Clean the work folder.
+- **--create**: Create the iso image.
 
 ### Example:
 
 ```
-./slack2iso.sh -create
+./slack2iso.sh --create
 ```
 
 ### Some considerations:
