@@ -104,7 +104,7 @@ create() {
         rm $i
     done
 
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/master/src/init
+    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/init
     if [ -f init ]; then 
         chmod +x init
     else
@@ -146,7 +146,7 @@ create() {
 
     cd media/isolinux/
     echo 'Linux' > live
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/master/src/isolinux.cfg
+    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/isolinux.cfg
     if [ ! -f isolinux.cfg ]; then 
         echo 'ERROR - arquivo isolinux.cfg não encontrado!'
         echo
@@ -172,7 +172,7 @@ create() {
     cp /iso/media/boot/initrd.gz .
     cp /iso/media/boot/vmlinuz .
 
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/master/src/grub.cfg
+    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/grub.cfg
     if [ ! -f grub.cfg ]; then 
         echo 'ERROR - arquivo grub.cfg não encontrado!'
         echo
