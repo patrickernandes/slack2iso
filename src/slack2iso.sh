@@ -7,9 +7,9 @@
 # *Necessário estar conectado a internet.
 # *Testado com "Slackware64-current".
 # *Todo o sistema deve estar instalado em uma única partição.
-# *Pacotes kernel-generic e kernel-huge devem estar instalados.
-# *Lembrando, quanto maior seu sistema, mais tempo vai levar para o livecd subir por completo.
-#
+# *Pacotes kernel-generic, kernel-huge, mkinitrd, cpio, lz4, lzo, squashfs-tools e xorriso devem estar instalados.
+# *Lembrando, quanto maior seu sistema, mais tempo vai levar para o livecd subir por completo durante o boot.
+# 
 #
 
 
