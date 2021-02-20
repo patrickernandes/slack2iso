@@ -193,10 +193,9 @@ create() {
     sleep 2
     echo
 
-    mkisofs -o /iso/$ISOFILE \
+    xorriso -as mkisofs -o /iso/$ISOFILE \
         -R -J -V "Linux" -A "$ISONAME" \
-        -preparer "My slack livecd" \
-        -hide-rr-moved -hide-joliet-trans-tbl \
+        -preparer "My slack livecd" -hide-rr-moved \
         -v -d -N -no-emul-boot -boot-load-size 4 -boot-info-table \
         -sort isolinux/iso.sort \
         -b isolinux/isolinux.bin \
