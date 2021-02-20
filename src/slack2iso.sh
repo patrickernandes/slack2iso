@@ -104,7 +104,7 @@ create() {
         rm $i
     done
 
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/init
+    wget --no-check-certificate --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/init
     if [ -f init ]; then 
         chmod +x init
     else
@@ -146,7 +146,7 @@ create() {
 
     cd media/isolinux/
     echo 'Linux' > live
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/isolinux.cfg
+    wget --no-check-certificate --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/isolinux.cfg
     if [ ! -f isolinux.cfg ]; then 
         echo 'ERROR - arquivo isolinux.cfg não encontrado!'
         echo
@@ -158,7 +158,7 @@ create() {
     done
 
     for i in {efiboot.img,iso.sort,isolinux.bin}; do
-        wget --timeout=2 --waitretry=1 --tries=3 -c https://mirrors.slackware.com/slackware/slackware64-current/isolinux/$i
+        wget --no-check-certificate --timeout=2 --waitretry=1 --tries=3 -c https://mirrors.slackware.com/slackware/slackware64-current/isolinux/$i
     done        
     cd ..
 
@@ -172,14 +172,14 @@ create() {
     cp /iso/media/boot/initrd.gz .
     cp /iso/media/boot/vmlinuz .
 
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/grub.cfg
+    wget --no-check-certificate --timeout=2 --waitretry=1 --tries=3 -c https://raw.githubusercontent.com/patrickernandes/slack2iso/main/src/grub.cfg
     if [ ! -f grub.cfg ]; then 
         echo 'ERROR - arquivo grub.cfg não encontrado!'
         echo
         exit 1
     fi
 
-    wget --timeout=2 --waitretry=1 --tries=3 -c https://mirrors.slackware.com/slackware/slackware64-current/EFI/BOOT/bootx64.efi
+    wget --no-check-certificate --timeout=2 --waitretry=1 --tries=3 -c https://mirrors.slackware.com/slackware/slackware64-current/EFI/BOOT/bootx64.efi
     if [ ! -f bootx64.efi ]; then 
         echo 'ERROR - arquivo bootx64.efi não encontrado!'
         echo
